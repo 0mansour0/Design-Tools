@@ -1,0 +1,24 @@
+$primary :#c64133;
+$secondary : rgb(59, 170, 83);
+$colors : (primary : $primary , secondary : $secondary);
+
+@each $name ,
+$hex in $colors {
+    .bg-#{$name} {
+        background: $hex;
+    }
+
+    .color-#{$name} {
+        color: $hex;
+    }
+
+    .btn-#{$name} {
+        @extend .bg-#{$name};
+        color: #FFF;
+
+        svg {
+            fill: currentColor;
+        }
+        cursor: pointer;
+    }
+}
